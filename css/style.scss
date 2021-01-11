@@ -1,0 +1,131 @@
+@import "keyframes.scss";
+.section {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  outline: none;
+  &.slide1 {
+    .anime-background {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      div {
+        position: relative;
+        width: calc(100% / 10);
+        height: 100vh;
+        z-index: 9;
+        &.top {
+          background: #5c71c6;
+          bottom: 0%;
+        }
+        &.bottom {
+          background: #dadff3;
+          top: 0%;
+        }
+      }
+    }
+    .right-sec {
+      position: absolute;
+      width: 50%;
+      right: 0;
+      height: 0;
+      bottom: 0;
+      background-color: #f6f6f8;
+      animation: height100 1s ease-out 7.3s forwards;
+      img#fr-RT-190 {
+        width: 15vh;
+        position: absolute;
+        top: 13vh;
+        transform: translate(0, -50%);
+        left: 10vh;
+        filter: invert(40%) sepia(82%) saturate(375%) hue-rotate(191deg)
+        brightness(95%) contrast(94%);
+        animation: rotateIT 2s linear infinite 8.3s;
+      }
+      img#fr-RT_79 {
+        width: 38vh;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%)scale(0);
+        margin-left: 50%;
+        animation: scale1 1s ease-in-out 8.5s forwards  ;
+      }
+    }
+    .left-sec {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100vh;
+      background-color: #5c71c6;
+      animation: width50 1s ease-out 3.5s forwards;
+      h1 {
+        font-size: 8vh;
+        font-family: "Ubuntu", sans-serif;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        letter-spacing: 0.3vh;
+        position: absolute;
+        top: 45vh;
+        line-height: 11vh;
+
+        opacity: 0;
+        animation: slideUph1 0.9s ease-in-out 4.5s forwards;
+      }
+      h2 {
+        font-size: 3vh;
+        font-family: "Ubuntu", sans-serif;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        letter-spacing: 0.3vh;
+        position: absolute;
+
+        top: 65vh;
+        opacity: 0;
+        animation: slideUph2 0.7s ease-in-out 5.4s forwards;
+      }
+      span {
+        position: absolute;
+        width: fit-content;
+        background-color: #fff;
+        color: #5c71c6;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 2.8vh;
+        padding: 1.5vh 3vh;
+        text-align: center;
+        top: 80vh;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: slideUpspan 0.7s ease-in-out 6.1s forwards;
+      }
+      .botm {
+        position: absolute;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-51%);
+        font-family: "Ubuntu", sans-serif;
+        color: #fff;
+        h3 {
+          letter-spacing: 0.2vh;
+          &:first-of-type {
+            transform: translateX(-30vh);
+            animation: slideh3 0.5s ease-in-out 6.8s forwards;
+          }
+          &:last-of-type {
+            transform: translateX(30vh);
+            animation: slideh3 0.5s ease-in-out 6.8s forwards;
+          }
+        }
+      }
+    }
+  }
+}
