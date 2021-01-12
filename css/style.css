@@ -124,6 +124,7 @@
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -131,6 +132,19 @@
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes op1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes op1 {
+  100% {
+    opacity: 1;
   }
 }
 
@@ -188,14 +202,15 @@
   left: 10vh;
   -webkit-filter: invert(40%) sepia(82%) saturate(375%) hue-rotate(191deg) brightness(95%) contrast(94%);
           filter: invert(40%) sepia(82%) saturate(375%) hue-rotate(191deg) brightness(95%) contrast(94%);
-  -webkit-animation: rotateIT 2s linear infinite 8.3s;
-          animation: rotateIT 2s linear infinite 8.3s;
+  -webkit-animation: rotateIT 2s linear infinite 8.3s, op1 1s linear 8.3s forwards;
+          animation: rotateIT 2s linear infinite 8.3s, op1 1s linear 8.3s forwards;
+  opacity: 0;
 }
 
 .section.slide1 .right-sec img#fr-RT_79 {
-  width: 38vh;
+  width: 52vh;
   position: absolute;
-  top: 50%;
+  top: 53%;
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
   margin-left: 50%;
@@ -285,6 +300,8 @@
 
 .section.slide1 .left-sec .botm h3 {
   letter-spacing: 0.2vh;
+  opacity: 0;
+  font-size: 2vh;
 }
 
 .section.slide1 .left-sec .botm h3:first-of-type {
@@ -299,5 +316,315 @@
           transform: translateX(30vh);
   -webkit-animation: slideh3 0.5s ease-in-out 6.8s forwards;
           animation: slideh3 0.5s ease-in-out 6.8s forwards;
+}
+
+.section.slide2 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.section.slide2 h3 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 8vh);
+          transform: translate(-50%, 8vh);
+  font-size: 5vh;
+  margin: 10vh 0;
+  color: #5d72c6;
+  letter-spacing: 0.2vh;
+  -webkit-transition: 0.7s opacity, 0.7s -webkit-transform;
+  transition: 0.7s opacity, 0.7s -webkit-transform;
+  transition: 0.7s opacity, 0.7s transform;
+  transition: 0.7s opacity, 0.7s transform, 0.7s -webkit-transform;
+  opacity: 0;
+}
+
+.section.slide2 ul {
+  position: absolute;
+  top: 24vh;
+  list-style: decimal;
+  margin-left: 6vh;
+}
+
+.section.slide2 ul li {
+  font-size: 3.5vh;
+  margin: 5vh 0;
+  color: #040f47;
+  font-weight: 500;
+  letter-spacing: 0.2vh;
+  -webkit-transform: translateX(10vh);
+          transform: translateX(10vh);
+  opacity: 0;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s transform, 0.5s opacity;
+  transition: 0.5s transform, 0.5s opacity, 0.5s -webkit-transform;
+}
+
+.section.slide2 div.con {
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  width: 70vh;
+  height: auto;
+}
+
+.section.slide2 div.con img {
+  width: 100%;
+}
+
+.section.slide2 div.con::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+  -webkit-transition: 0.5s height;
+  transition: 0.5s height;
+}
+
+.section.slide2.active h3 {
+  -webkit-transform: translate(-50%, 0vh);
+          transform: translate(-50%, 0vh);
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.section.slide2.active li:nth-child(1) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.section.slide2.active li:nth-child(2) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.section.slide2.active li:nth-child(3) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.section.slide2.active li:nth-child(4) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 1.8s;
+          transition-delay: 1.8s;
+}
+
+.section.slide2.active li:nth-child(5) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 2.1s;
+          transition-delay: 2.1s;
+}
+
+.section.slide2.active li:nth-child(6) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 2.4s;
+          transition-delay: 2.4s;
+}
+
+.section.slide2.active div.con::before {
+  height: 0;
+  -webkit-transition-delay: 2.6s;
+          transition-delay: 2.6s;
+}
+
+.section.slide3 {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.section.slide3 svg {
+  position: absolute;
+  top: 55%;
+  left: 52%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+}
+
+.section.slide3 svg g#board {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  overflow: hidden;
+  -webkit-transition: 1s -webkit-clip-path;
+  transition: 1s -webkit-clip-path;
+  transition: 1s clip-path;
+  transition: 1s clip-path, 1s -webkit-clip-path;
+}
+
+.section.slide3 svg g#board #text {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  -webkit-transition: 0.8s -webkit-clip-path;
+  transition: 0.8s -webkit-clip-path;
+  transition: 0.8s clip-path;
+  transition: 0.8s clip-path, 0.8s -webkit-clip-path;
+}
+
+.section.slide3 svg g#board #question-mark {
+  -webkit-transform: translateY(-10vh);
+          transform: translateY(-10vh);
+  opacity: 0;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s transform;
+  transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
+}
+
+.section.slide3 svg g#teacher {
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-50vh);
+          transform: translateY(-50vh);
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s transform;
+  transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
+}
+
+.section.slide3.active svg g#board {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.section.slide3.active svg g#board #text {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.section.slide3.active svg g#board #question-mark {
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+  opacity: 1;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+
+.section.slide4 .top-sec_title {
+  position: absolute;
+  top: 0;
+  font-size: 3vh;
+  letter-spacing: .2vh;
+  font-family: "Ubuntu",sans-serif;
+  text-align: center;
+  width: 100%;
+  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section.slide4 .top-sec_title img {
+  width: 15vh;
+  margin-left: 10vh;
+  -webkit-transform: translateY(-2.5vh);
+          transform: translateY(-2.5vh);
+}
+
+.section.slide4 .con-TY {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150vh;
+  position: absolute;
+  left: 45%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 26vh;
+}
+
+.section.slide4 .con-TY span {
+  font-family: "Ubuntu";
+  letter-spacing: .2vh;
+  font-size: 2.3vh;
+  text-transform: capitalize;
+  background-color: #5c71c6;
+  color: #fff;
+  padding: .8vh 2vh;
+}
+
+.section.slide4 .con-TY span:last-of-type {
+  padding: .8vh 3vh;
+}
+
+.section.slide4 .uls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 150vh;
+  position: absolute;
+  left: 45%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 36vh;
+}
+
+.section.slide4 .uls .ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+}
+
+.section.slide4 .uls .ul.two {
+  -webkit-transform: translateX(14Vh);
+          transform: translateX(14Vh);
+}
+
+.section.slide4 .uls .ul li {
+  list-style: none;
+  font-size: 2vh;
+  margin: 2vh 0;
+  font-family: sans-serif;
+  text-transform: capitalize;
 }
 /*# sourceMappingURL=style.css.map */

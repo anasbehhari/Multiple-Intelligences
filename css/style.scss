@@ -41,16 +41,17 @@
         transform: translate(0, -50%);
         left: 10vh;
         filter: invert(40%) sepia(82%) saturate(375%) hue-rotate(191deg)
-        brightness(95%) contrast(94%);
-        animation: rotateIT 2s linear infinite 8.3s;
+          brightness(95%) contrast(94%);
+        animation: rotateIT 2s linear infinite 8.3s, op1 1s linear 8.3s forwards;
+        opacity: 0;
       }
       img#fr-RT_79 {
-        width: 38vh;
+        width: 52vh;
         position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%)scale(0);
+        top: 53%;
+        transform: translate(-50%, -50%) scale(0);
         margin-left: 50%;
-        animation: scale1 1s ease-in-out 8.5s forwards  ;
+        animation: scale1 1s ease-in-out 8.5s forwards;
       }
     }
     .left-sec {
@@ -71,7 +72,6 @@
         position: absolute;
         top: 45vh;
         line-height: 11vh;
-
         opacity: 0;
         animation: slideUph1 0.9s ease-in-out 4.5s forwards;
       }
@@ -116,6 +116,8 @@
         color: #fff;
         h3 {
           letter-spacing: 0.2vh;
+          opacity: 0;
+          font-size: 2vh;
           &:first-of-type {
             transform: translateX(-30vh);
             animation: slideh3 0.5s ease-in-out 6.8s forwards;
@@ -124,6 +126,201 @@
             transform: translateX(30vh);
             animation: slideh3 0.5s ease-in-out 6.8s forwards;
           }
+        }
+      }
+    }
+  }
+  &.slide2 {
+    font-family: "Ubuntu", sans-serif;
+
+    h3 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 8vh);
+      font-size: 5vh;
+      margin: 10vh 0;
+      color: rgb(93, 114, 198);
+      letter-spacing: 0.2vh;
+      transition: 0.7s opacity, 0.7s transform;
+      opacity: 0;
+    }
+    ul {
+      position: absolute;
+      top: 24vh;
+      list-style: decimal;
+      margin-left: 6vh;
+      li {
+        font-size: 3.5vh;
+        margin: 5vh 0;
+        color: #040f47;
+        font-weight: 500;
+        letter-spacing: 0.2vh;
+        transform: translateX(10vh);
+        opacity: 0;
+        transition: 0.5s transform, 0.5s opacity;
+      }
+    }
+    div.con {
+      position: absolute;
+      left: 90%;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      width: 70vh;
+      height: auto;
+      img {
+        width: 100%;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        transition: 0.5s height;
+      }
+    }
+    &.active {
+      h3 {
+        transform: translate(-50%, 0vh);
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+      @for $i from 3 to 9 {
+        li:nth-child(#{$i - 2}) {
+          opacity: 1;
+          transform: translateX(0);
+          transition-delay: $i * 0.3s;
+        }
+      }
+      div.con::before {
+        height: 0;
+        transition-delay: 2.6s;
+      }
+    }
+  }
+  &.slide3 {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    svg {
+      position: absolute;
+      top: 55%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+      width: 55%;
+      height: 55%;
+      g#board {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        overflow: hidden;
+        transition: 1s clip-path;
+
+        #text {
+          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+          transition: 0.8s clip-path;
+        }
+        #question-mark {
+          transform: translateY(-10vh);
+          opacity: 0;
+          transition: 0.5s opacity, 0.5s transform;
+        }
+      }
+      g#teacher {
+        display: none;
+        opacity: 0;
+        transform: translateY(-50vh);
+        transition: 0.5s opacity, 0.5s transform;
+      }
+    }
+    &.active {
+      svg {
+        g#board {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          transition-delay: 0.5s;
+          #text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transition-delay: 1.5s;
+          }
+          #question-mark {
+            transform: translateY(0vh);
+            opacity: 1;
+            transition-delay: 2s;
+          }
+          
+        }
+       
+      }
+    }
+  }
+  &.slide4 {
+    .top-sec_title {
+      position: absolute;
+      top: 0;
+      font-size: 3vh;
+      letter-spacing: .2vh;
+      font-family: "Ubuntu",sans-serif;
+      text-align: center;
+      width: 100%;
+      margin-top: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+      img {
+        width: 15vh;
+        margin-left: 10vh;
+        transform: translateY(-2.5vh);
+      }
+    }
+    .con-TY {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 150vh;
+      position: absolute;
+      left: 45%;
+      transform: translateX(-50%);
+      top: 26vh;
+      span {
+        font-family: "Ubuntu";
+        letter-spacing: .2vh;
+        font-size: 2.3vh;
+        text-transform: capitalize;
+        background-color: #5c71c6;
+        color: #fff;
+        padding: .8vh 2vh;
+        &:last-of-type{
+         padding: .8vh 3vh;
+        }
+      }
+    }
+    .uls {
+      display: flex;
+      justify-content: space-between;
+      width: 150vh;
+      position: absolute;
+      left: 45%;
+      transform: translateX(-50%);
+      top: 36vh;
+      .ul {
+        display: flex;
+        flex-direction: column;
+        //text-align: center;
+        width: auto;
+        &.two {
+          transform: translateX(14Vh);
+        }
+        li {
+          list-style: none;
+          font-size: 2vh;
+          margin: 2vh 0;
+          font-family: sans-serif;
+          text-transform: capitalize;
+          
         }
       }
     }

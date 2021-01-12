@@ -14,12 +14,12 @@
 
 @keyframes rotateIT {
   100% {
-    transform: translate(0,-50%)rotate(360deg)
+    transform: translate(0, -50%) rotate(360deg);
   }
 }
 @keyframes scale1 {
   100% {
-    transform: translate(-50%, -50%)scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 @keyframes width50 {
@@ -54,5 +54,12 @@
 @keyframes slideh3 {
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes op1 {
+  100% {
+    opacity: 1;
   }
 }

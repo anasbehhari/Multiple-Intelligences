@@ -124,6 +124,7 @@
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -131,6 +132,19 @@
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes op1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes op1 {
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=keyframes.css.map */
