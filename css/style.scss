@@ -202,7 +202,11 @@
       }
     }
   }
-  &.slide3 {
+  &.slide3,
+  &.slide5,
+  &.slide7,
+  &.slide9,
+  &.slide11 {
     width: 100%;
     height: 100%;
     left: 0;
@@ -218,16 +222,15 @@
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
         overflow: hidden;
         transition: 1s clip-path;
-
-        #text {
-          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-          transition: 0.8s clip-path;
-        }
-        #question-mark {
-          transform: translateY(-10vh);
-          opacity: 0;
-          transition: 0.5s opacity, 0.5s transform;
-        }
+      }
+      g#text {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: 0.8s clip-path;
+      }
+      g#question-mark {
+        transform: translateY(-10vh);
+        opacity: 0;
+        transition: 0.5s opacity, 0.5s transform;
       }
       g#teacher {
         display: none;
@@ -241,18 +244,16 @@
         g#board {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           transition-delay: 0.5s;
-          #text {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            transition-delay: 1.5s;
-          }
-          #question-mark {
-            transform: translateY(0vh);
-            opacity: 1;
-            transition-delay: 2s;
-          }
-          
         }
-       
+        #text {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          transition-delay: 1.5s;
+        }
+        #question-mark {
+          transform: translateY(0vh);
+          opacity: 1;
+          transition-delay: 2s;
+        }
       }
     }
   }
@@ -261,19 +262,26 @@
       position: absolute;
       top: 0;
       font-size: 3vh;
-      letter-spacing: .2vh;
-      font-family: "Ubuntu",sans-serif;
+      letter-spacing: 0.2vh;
+      font-family: "Ubuntu", sans-serif;
       text-align: center;
       width: 100%;
       margin-top: 5vh;
       display: flex;
       align-items: center;
       justify-content: center;
-     
+      span {
+        width: fit-content;
+        transition: 0.5s transform, 0.5s opacity;
+        transform: translateX(-30vh);
+        opacity: 0;
+      }
       img {
         width: 15vh;
         margin-left: 10vh;
         transform: translateY(-2.5vh);
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        transition: 0.5s clip-path;
       }
     }
     .con-TY {
@@ -284,17 +292,22 @@
       position: absolute;
       left: 45%;
       transform: translateX(-50%);
-      top: 26vh;
+      top: 24vh;
       span {
         font-family: "Ubuntu";
-        letter-spacing: .2vh;
+        letter-spacing: 0.2vh;
         font-size: 2.3vh;
         text-transform: capitalize;
         background-color: #5c71c6;
         color: #fff;
-        padding: .8vh 2vh;
-        &:last-of-type{
-         padding: .8vh 3vh;
+        padding: 0.8vh 2vh;
+        transform: translateX(-10vh);
+        opacity: 0;
+        transition: 0.5s opacity, 0.5s transform;
+        transition-delay: 0.3s;
+        &:last-of-type {
+          padding: 0.8vh 3vh;
+          transform: translateX(10vh);
         }
       }
     }
@@ -305,22 +318,358 @@
       position: absolute;
       left: 45%;
       transform: translateX(-50%);
-      top: 36vh;
+      top: 33vh;
       .ul {
         display: flex;
         flex-direction: column;
         //text-align: center;
+
         width: auto;
         &.two {
-          transform: translateX(14Vh);
+          transform: translateX(14vh);
         }
-        li {
-          list-style: none;
-          font-size: 2vh;
+        .item {
           margin: 2vh 0;
-          font-family: sans-serif;
-          text-transform: capitalize;
-          
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: fit-content;
+          transition: 0.5s opacity, 0.5s transform;
+          transform: translateX(-10vh);
+          opacity: 0;
+          li {
+            list-style: none;
+            font-size: 2vh;
+            font-family: sans-serif;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    &.active {
+      .top-sec_title {
+        span {
+          transition-delay: 1s;
+          transform: translateX(0vh);
+          opacity: 1 !important;
+        }
+        img {
+          transition-delay: 2s;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+    }
+  }
+  &.slide6 {
+    .left-sec {
+      position: absolute;
+      width: 50%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      p {
+        position: absolute;
+        font-family: "Ubuntu";
+        font-size: 2vh;
+        top: 50%;
+        transform: translateY(40vh);
+        text-align: justify;
+        margin: 2vh 4vh;
+        line-height: 3.8vh;
+        opacity: 0;
+        transition: 0.5s opacity, 0.5s transform;
+      }
+    }
+    .name {
+      position: absolute;
+      top: 10vh;
+      left: 50%;
+      transform: translate(-50%, 20vh);
+      font-family: "Ubuntu";
+      font-size: 3.5vh;
+      letter-spacing: 0.3vh;
+      color: #040f47;
+      font-weight: 600;
+      transition: 0.5s transform, 0.5s opacity;
+      opacity: 0;
+    }
+    span {
+      position: absolute;
+      top: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Ubuntu";
+      font-size: 1.5vh;
+      letter-spacing: 0.1vh;
+      color: #040f47;
+      text-align: center;
+      width: 50vh;
+      line-height: 2.5vh;
+    }
+    .right-sec {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .con-img {
+        width: 50vh;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(9vh);
+        overflow: hidden;
+        &::before {
+          position: absolute;
+          width: 150%;
+          height: 150%;
+          background-color: #040f47;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: "";
+          transition: 0.5s clip-path, 0.8s opacity;
+          opacity: 1;
+          clip-path: circle(50% at 50% 50%);
+          z-index: 3;
+        }
+        &::after {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          top: 0%;
+          left: 0%;
+          content: "";
+          transition: 0.5s height;
+          z-index: 2;
+        }
+        img {
+          width: 70%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 1;
+        }
+      }
+    }
+    &.active {
+      .con-img {
+        &::before {
+          clip-path: circle(0% at 50% 50%);
+          transition-delay: 0.6s;
+          opacity: 0;
+        }
+        &::after {
+          height: 0;
+          transition-delay: 1.3s;
+        }
+      }
+      .name {
+        transform: translate(-50%, 0vh);
+        opacity: 1;
+        transition-delay: 1.6s;
+      }
+      p {
+        transform: translateY(-50%);
+        opacity: 1;
+        transition-delay: 2s;
+      }
+    }
+  }
+  &.slide8 {
+    .before {
+      position: absolute;
+      width: 50%;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      //background-color: yellow;
+      .title {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 7vh;
+        font-size: 2.2vh;
+        font-family: "Ubuntu";
+        letter-spacing: 0.15vh;
+        span {
+          position: absolute;
+          transform: translateX(-16vh);
+          background-color: #dadff3;
+          color: #010101;
+          padding: 1vh 7vh;
+        }
+      }
+      .img {
+        &.ones {
+          position: absolute;
+          top: 22vh;
+          left: 50%;
+          transform: translateX(-73%);
+          img {
+            width: 20vh;
+          }
+        }
+        &.on {
+          position: absolute;
+          top: 54vh;
+          left: 50%;
+          transform: translateX(-82%);
+          img {
+            width: 15vh;
+          }
+        }
+        &.on2 {
+          position: absolute;
+          top: 78vh;
+          left: 50%;
+          transform: translateX(-72%);
+          img {
+            width: 25vh;
+          }
+        }
+      }
+    }
+    .after {
+      position: absolute;
+      width: 50%;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      //background-color: #5c71c6;
+      .title {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 7vh;
+        font-size: 2.2vh;
+        font-family: "Ubuntu";
+        letter-spacing: 0.15vh;
+        span {
+          position: absolute;
+          transform: translateX(-5vh);
+
+          background-color: #5c71c6;
+          color: #fff;
+          padding: 1vh 7vh;
+        }
+      }
+      .o___yuy {
+        position: absolute;
+        top: 15vh;
+        width: 100%;
+        height: 82vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        #onei {
+          width: 15vh;
+        }
+        #twoi {
+          width: 15vh;
+          margin-left: 3vh;
+          margin-top: 5vh;
+        }
+        #threei {
+          width: 15vh;
+          margin-left: 9vh;
+          margin-top: 5vh;
+        }
+        #fivei {
+          width: 25vh;
+          margin-left: 9vh;
+          margin-top: 5vh;
+        }
+        #fouri {
+          width: 10vh;
+          margin-left: 10vh;
+          margin-top: 5vh;
+        }
+      }
+    }
+  }
+  &.slide10 {
+    .title {
+      position: absolute;
+      top: 8vh;
+      width: 100%;
+      text-align: center;
+      font-family: "Ubuntu";
+      span {
+        font-size: 2.5vh;
+        text-transform: capitalize;
+        transition: 0.5s transform, 0.5s opacity;
+        transform: translateY(15vh);
+        opacity: 0;
+      }
+    }
+    .con {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      flex-wrap: wrap;
+      justify-content: center;
+      top: 50%;
+      transform: translateY(-50%);
+      .fg {
+        position: relative;
+        width: 25vh;
+        height: fit-content;
+        margin: 2vh;
+        transition: 0.5s opacity;
+        opacity: 1;
+        transition-delay: 0.2s;
+        &.nt90 {
+          opacity: 0;
+        }
+        .con-def {
+          width: 100%;
+          height: 5vh;
+          font-family: "Ubuntu";
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 0.1vh solid #000;
+          padding: 1.5vh 0.5vh;
+          span {
+            font-size: 1.8vh;
+          }
+        }
+        .con-img {
+          width: 100%;
+          height: 15vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 0.1vh solid #000;
+          border-left: 0.1vh solid #000;
+          border-right: 0.1vh solid #000;
+
+          padding: 0.5vh;
+
+          img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    &.active {
+      .title {
+        span {
+          transition-delay: .8s;
+          transform: translateY(0vh);
+          opacity: 1;
         }
       }
     }

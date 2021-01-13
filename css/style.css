@@ -451,14 +451,14 @@
           transition-delay: 2.6s;
 }
 
-.section.slide3 {
+.section.slide3, .section.slide5, .section.slide7, .section.slide9, .section.slide11 {
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
 }
 
-.section.slide3 svg {
+.section.slide3 svg, .section.slide5 svg, .section.slide7 svg, .section.slide9 svg, .section.slide11 svg {
   position: absolute;
   top: 55%;
   left: 52%;
@@ -468,7 +468,7 @@
   height: 55%;
 }
 
-.section.slide3 svg g#board {
+.section.slide3 svg g#board, .section.slide5 svg g#board, .section.slide7 svg g#board, .section.slide9 svg g#board, .section.slide11 svg g#board {
   -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
           clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   overflow: hidden;
@@ -478,7 +478,7 @@
   transition: 1s clip-path, 1s -webkit-clip-path;
 }
 
-.section.slide3 svg g#board #text {
+.section.slide3 svg g#text, .section.slide5 svg g#text, .section.slide7 svg g#text, .section.slide9 svg g#text, .section.slide11 svg g#text {
   -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
           clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   -webkit-transition: 0.8s -webkit-clip-path;
@@ -487,7 +487,7 @@
   transition: 0.8s clip-path, 0.8s -webkit-clip-path;
 }
 
-.section.slide3 svg g#board #question-mark {
+.section.slide3 svg g#question-mark, .section.slide5 svg g#question-mark, .section.slide7 svg g#question-mark, .section.slide9 svg g#question-mark, .section.slide11 svg g#question-mark {
   -webkit-transform: translateY(-10vh);
           transform: translateY(-10vh);
   opacity: 0;
@@ -497,7 +497,7 @@
   transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
 }
 
-.section.slide3 svg g#teacher {
+.section.slide3 svg g#teacher, .section.slide5 svg g#teacher, .section.slide7 svg g#teacher, .section.slide9 svg g#teacher, .section.slide11 svg g#teacher {
   display: none;
   opacity: 0;
   -webkit-transform: translateY(-50vh);
@@ -508,21 +508,21 @@
   transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
 }
 
-.section.slide3.active svg g#board {
+.section.slide3.active svg g#board, .section.slide5.active svg g#board, .section.slide7.active svg g#board, .section.slide9.active svg g#board, .section.slide11.active svg g#board {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
 }
 
-.section.slide3.active svg g#board #text {
+.section.slide3.active svg #text, .section.slide5.active svg #text, .section.slide7.active svg #text, .section.slide9.active svg #text, .section.slide11.active svg #text {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   -webkit-transition-delay: 1.5s;
           transition-delay: 1.5s;
 }
 
-.section.slide3.active svg g#board #question-mark {
+.section.slide3.active svg #question-mark, .section.slide5.active svg #question-mark, .section.slide7.active svg #question-mark, .section.slide9.active svg #question-mark, .section.slide11.active svg #question-mark {
   -webkit-transform: translateY(0vh);
           transform: translateY(0vh);
   opacity: 1;
@@ -534,8 +534,8 @@
   position: absolute;
   top: 0;
   font-size: 3vh;
-  letter-spacing: .2vh;
-  font-family: "Ubuntu",sans-serif;
+  letter-spacing: 0.2vh;
+  font-family: "Ubuntu", sans-serif;
   text-align: center;
   width: 100%;
   margin-top: 5vh;
@@ -550,11 +550,30 @@
           justify-content: center;
 }
 
+.section.slide4 .top-sec_title span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s transform, 0.5s opacity;
+  transition: 0.5s transform, 0.5s opacity, 0.5s -webkit-transform;
+  -webkit-transform: translateX(-30vh);
+          transform: translateX(-30vh);
+  opacity: 0;
+}
+
 .section.slide4 .top-sec_title img {
   width: 15vh;
   margin-left: 10vh;
   -webkit-transform: translateY(-2.5vh);
           transform: translateY(-2.5vh);
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  -webkit-transition: 0.5s -webkit-clip-path;
+  transition: 0.5s -webkit-clip-path;
+  transition: 0.5s clip-path;
+  transition: 0.5s clip-path, 0.5s -webkit-clip-path;
 }
 
 .section.slide4 .con-TY {
@@ -572,21 +591,32 @@
   left: 45%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 26vh;
+  top: 24vh;
 }
 
 .section.slide4 .con-TY span {
   font-family: "Ubuntu";
-  letter-spacing: .2vh;
+  letter-spacing: 0.2vh;
   font-size: 2.3vh;
   text-transform: capitalize;
   background-color: #5c71c6;
   color: #fff;
-  padding: .8vh 2vh;
+  padding: 0.8vh 2vh;
+  -webkit-transform: translateX(-10vh);
+          transform: translateX(-10vh);
+  opacity: 0;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s transform;
+  transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .section.slide4 .con-TY span:last-of-type {
-  padding: .8vh 3vh;
+  padding: 0.8vh 3vh;
+  -webkit-transform: translateX(10vh);
+          transform: translateX(10vh);
 }
 
 .section.slide4 .uls {
@@ -601,7 +631,7 @@
   left: 45%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 36vh;
+  top: 33vh;
 }
 
 .section.slide4 .uls .ul {
@@ -616,15 +646,467 @@
 }
 
 .section.slide4 .uls .ul.two {
-  -webkit-transform: translateX(14Vh);
-          transform: translateX(14Vh);
+  -webkit-transform: translateX(14vh);
+          transform: translateX(14vh);
 }
 
-.section.slide4 .uls .ul li {
+.section.slide4 .uls .ul .item {
+  margin: 2vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s transform;
+  transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
+  -webkit-transform: translateX(-10vh);
+          transform: translateX(-10vh);
+  opacity: 0;
+}
+
+.section.slide4 .uls .ul .item li {
   list-style: none;
   font-size: 2vh;
-  margin: 2vh 0;
   font-family: sans-serif;
   text-transform: capitalize;
+}
+
+.section.slide4.active .top-sec_title span {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-transform: translateX(0vh);
+          transform: translateX(0vh);
+  opacity: 1 !important;
+}
+
+.section.slide4.active .top-sec_title img {
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.section.slide6 .left-sec {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.section.slide6 .left-sec p {
+  position: absolute;
+  font-family: "Ubuntu";
+  font-size: 2vh;
+  top: 50%;
+  -webkit-transform: translateY(40vh);
+          transform: translateY(40vh);
+  text-align: justify;
+  margin: 2vh 4vh;
+  line-height: 3.8vh;
+  opacity: 0;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s transform;
+  transition: 0.5s opacity, 0.5s transform, 0.5s -webkit-transform;
+}
+
+.section.slide6 .name {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, 20vh);
+          transform: translate(-50%, 20vh);
+  font-family: "Ubuntu";
+  font-size: 3.5vh;
+  letter-spacing: 0.3vh;
+  color: #040f47;
+  font-weight: 600;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s transform, 0.5s opacity;
+  transition: 0.5s transform, 0.5s opacity, 0.5s -webkit-transform;
+  opacity: 0;
+}
+
+.section.slide6 span {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "Ubuntu";
+  font-size: 1.5vh;
+  letter-spacing: 0.1vh;
+  color: #040f47;
+  text-align: center;
+  width: 50vh;
+  line-height: 2.5vh;
+}
+
+.section.slide6 .right-sec {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section.slide6 .right-sec .con-img {
+  width: 50vh;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(9vh);
+          transform: translateX(9vh);
+  overflow: hidden;
+}
+
+.section.slide6 .right-sec .con-img::before {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background-color: #040f47;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "";
+  -webkit-transition: 0.8s opacity, 0.5s -webkit-clip-path;
+  transition: 0.8s opacity, 0.5s -webkit-clip-path;
+  transition: 0.5s clip-path, 0.8s opacity;
+  transition: 0.5s clip-path, 0.8s opacity, 0.5s -webkit-clip-path;
+  opacity: 1;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  z-index: 3;
+}
+
+.section.slide6 .right-sec .con-img::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0%;
+  left: 0%;
+  content: "";
+  -webkit-transition: 0.5s height;
+  transition: 0.5s height;
+  z-index: 2;
+}
+
+.section.slide6 .right-sec .con-img img {
+  width: 70%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.section.slide6.active .con-img::before {
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+  opacity: 0;
+}
+
+.section.slide6.active .con-img::after {
+  height: 0;
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+
+.section.slide6.active .name {
+  -webkit-transform: translate(-50%, 0vh);
+          transform: translate(-50%, 0vh);
+  opacity: 1;
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
+.section.slide6.active p {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 1;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+
+.section.slide8 .before {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.section.slide8 .before .title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 7vh;
+  font-size: 2.2vh;
+  font-family: "Ubuntu";
+  letter-spacing: 0.15vh;
+}
+
+.section.slide8 .before .title span {
+  position: absolute;
+  -webkit-transform: translateX(-16vh);
+          transform: translateX(-16vh);
+  background-color: #dadff3;
+  color: #010101;
+  padding: 1vh 7vh;
+}
+
+.section.slide8 .before .img.ones {
+  position: absolute;
+  top: 22vh;
+  left: 50%;
+  -webkit-transform: translateX(-73%);
+          transform: translateX(-73%);
+}
+
+.section.slide8 .before .img.ones img {
+  width: 20vh;
+}
+
+.section.slide8 .before .img.on {
+  position: absolute;
+  top: 54vh;
+  left: 50%;
+  -webkit-transform: translateX(-82%);
+          transform: translateX(-82%);
+}
+
+.section.slide8 .before .img.on img {
+  width: 15vh;
+}
+
+.section.slide8 .before .img.on2 {
+  position: absolute;
+  top: 78vh;
+  left: 50%;
+  -webkit-transform: translateX(-72%);
+          transform: translateX(-72%);
+}
+
+.section.slide8 .before .img.on2 img {
+  width: 25vh;
+}
+
+.section.slide8 .after {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.section.slide8 .after .title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 7vh;
+  font-size: 2.2vh;
+  font-family: "Ubuntu";
+  letter-spacing: 0.15vh;
+}
+
+.section.slide8 .after .title span {
+  position: absolute;
+  -webkit-transform: translateX(-5vh);
+          transform: translateX(-5vh);
+  background-color: #5c71c6;
+  color: #fff;
+  padding: 1vh 7vh;
+}
+
+.section.slide8 .after .o___yuy {
+  position: absolute;
+  top: 15vh;
+  width: 100%;
+  height: 82vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section.slide8 .after .o___yuy #onei {
+  width: 15vh;
+}
+
+.section.slide8 .after .o___yuy #twoi {
+  width: 15vh;
+  margin-left: 3vh;
+  margin-top: 5vh;
+}
+
+.section.slide8 .after .o___yuy #threei {
+  width: 15vh;
+  margin-left: 9vh;
+  margin-top: 5vh;
+}
+
+.section.slide8 .after .o___yuy #fivei {
+  width: 25vh;
+  margin-left: 9vh;
+  margin-top: 5vh;
+}
+
+.section.slide8 .after .o___yuy #fouri {
+  width: 10vh;
+  margin-left: 10vh;
+  margin-top: 5vh;
+}
+
+.section.slide10 .title {
+  position: absolute;
+  top: 8vh;
+  width: 100%;
+  text-align: center;
+  font-family: "Ubuntu";
+}
+
+.section.slide10 .title span {
+  font-size: 2.5vh;
+  text-transform: capitalize;
+  -webkit-transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s opacity, 0.5s -webkit-transform;
+  transition: 0.5s transform, 0.5s opacity;
+  transition: 0.5s transform, 0.5s opacity, 0.5s -webkit-transform;
+  -webkit-transform: translateY(15vh);
+          transform: translateY(15vh);
+  opacity: 0;
+}
+
+.section.slide10 .con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.section.slide10 .con .fg {
+  position: relative;
+  width: 25vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 2vh;
+  -webkit-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.section.slide10 .con .fg.nt90 {
+  opacity: 0;
+}
+
+.section.slide10 .con .fg .con-def {
+  width: 100%;
+  height: 5vh;
+  font-family: "Ubuntu";
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0.1vh solid #000;
+  padding: 1.5vh 0.5vh;
+}
+
+.section.slide10 .con .fg .con-def span {
+  font-size: 1.8vh;
+}
+
+.section.slide10 .con .fg .con-img {
+  width: 100%;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 0.1vh solid #000;
+  border-left: 0.1vh solid #000;
+  border-right: 0.1vh solid #000;
+  padding: 0.5vh;
+}
+
+.section.slide10 .con .fg .con-img img {
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.section.slide10.active .title span {
+  -webkit-transition-delay: .8s;
+          transition-delay: .8s;
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
