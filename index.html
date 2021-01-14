@@ -1317,7 +1317,7 @@
         <script src="js/fullPage.min.js"></script>
         <script src="js/app.js"></script>
         <script>
-            if (window.innerWidth > 800) {
+            if (window.innerWidth > 1000) {
                 new fullpage('#Silder-Show-Multiple-Intelligences',{
                     autoScrolling: true,
                     navigation: true
@@ -1328,10 +1328,9 @@
                 document.body.innerHTML = "Phone version not supported make sure to reload the site"
             }
             window.onresize = () => {
-                if (window.innerWidth < 800) {
+                if (window.innerWidth < 1000) {
                     document.body.innerHTML = "Phone version not supported make sure to reload the site"
                     document.body.style.margin = "5rem"
-
                 }
 
             }
